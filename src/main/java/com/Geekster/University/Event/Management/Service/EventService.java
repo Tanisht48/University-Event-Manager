@@ -55,4 +55,15 @@ public class EventService {
         return "Location updated for the event";
 
     }
+
+    public String removeEventById(Integer id) {
+        Event e = iEventRepo.findById(id).orElse(null);
+        if(e==null)
+        {
+            return "Id not found";
+        }
+        iEventRepo.delete(e);
+
+        return "Event Removed";
+    }
 }

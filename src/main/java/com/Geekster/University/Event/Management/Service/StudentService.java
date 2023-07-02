@@ -46,4 +46,16 @@ public class StudentService {
         studentRepo.save(stu);
         return  "Id updated";
     }
+
+    public String removeStudentById(Integer id) {
+
+       Student e = studentRepo.findById(id).orElse(null);
+        if(e==null)
+        {
+            return "Id not found";
+        }
+        studentRepo.delete(e);
+
+        return "Student Removed";
+    }
 }

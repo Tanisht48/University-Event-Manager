@@ -51,6 +51,12 @@ public class EventController {
         return eventService.updateEventLocationById(id,locEve);
     }
 
+    @DeleteMapping("event/{id}")
+    public String removeEventById(@PathVariable Integer id)
+    {
+        return  eventService.removeEventById(id);
+    }
+
 }
 
 
